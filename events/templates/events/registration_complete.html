@@ -1,0 +1,23 @@
+{% extends 'events/base.html' %}
+
+{% block title %}Registration Complete{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="alert alert-success shadow-sm rounded" role="alert">
+        <h4 class="alert-heading">Registration Successful!</h4>
+        <p>Thank you, <strong>{{ attendee.name }}</strong>, for registering.</p>
+
+        {% if attendee.category == 'adult' %}
+            <p>You are registered as an <strong>Adult</strong> with the title: <strong>{{ attendee.detail }}</strong>.</p>
+        {% else %}
+            <p>You are registered as a <strong>Child</strong> in the <strong>{{ attendee.detail }}</strong> age group.</p>
+        {% endif %}
+
+        <hr>
+        <a href="{% url 'event_list' %}" class="btn btn-outline-primary mt-3">Back to Events</a>
+    </div>
+</div>
+{% endblock %}
+
+

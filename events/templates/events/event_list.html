@@ -1,0 +1,29 @@
+{% extends 'events/base.html' %}
+
+{% block title %}All Events{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Upcoming Events</h2>
+
+    {% if events %}
+        <div class="row">
+            {% for event in events %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ event.name }}</h5>
+                            <p class="card-text"><strong>Date:</strong> {{ event.date|date:"D, M d, Y H:i" }}</p>
+                            <p class="card-text"><strong>Location:</strong> {{ event.location }}</p>
+                            <p class="card-text">{{ event.description|truncatewords:20 }}</p>
+                            <a href="{% url 'combined_registration' %}" class="btn btn-primary">Register</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No events available at the moment.</p>
+    {% endif %}
+</div>
+{% endblock %}

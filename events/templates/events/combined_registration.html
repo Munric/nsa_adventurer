@@ -1,0 +1,57 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+<h2 class="text-center mb-4">Naivasha Station Adventurers Camp Out 2025</h2>
+
+<div class="form-wrapper">
+    <form method="post" novalidate>
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-success">Complete Registration</button>
+    </form>
+</div>
+
+<script>
+    // Toggle "detail" field options based on category
+    const categoryField = document.querySelector('[name="category"]');
+    const detailField = document.querySelector('[name="detail"]');
+
+    const updateDetailOptions = () => {
+        const value = categoryField.value;
+        let options = '';
+        if (value === 'adult') {
+            options = `
+                <option value="Mr">Mr.</option>
+                <option value="Mrs">Mrs.</option>
+                <option value="Ms">Ms.</option>
+                <option value="Dr">Dr.</option>
+            `;
+        } else {
+            options = `
+                <option value="4">4 years</option>
+                <option value="5">5 years</option>
+                <option value="6">6 years</option>
+                <option value="7">7 years</option>
+                <option value="8">8 years</option>
+                <option value="9">9 years</option>
+            `;
+        }
+        if (detailField) {
+            detailField.innerHTML = options;
+        }
+    };
+
+    if (categoryField && detailField) {
+        updateDetailOptions();  // Set initial state
+        categoryField.addEventListener('change', updateDetailOptions);
+    }
+</script>
+{% endblock %}
