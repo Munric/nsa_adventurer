@@ -26,7 +26,8 @@ DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 import os
 
-ALLOWED_HOSTS = ['event_manager.onrender.com']
+ALLOWED_HOSTS = ['nsa-adventurer.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
