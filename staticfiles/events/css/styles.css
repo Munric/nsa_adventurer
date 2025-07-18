@@ -1,21 +1,14 @@
-/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-/* ==========================
-   Root Theme Variables
-========================== */
 :root {
-    --primary-color: #0d6efd;
+    --primary-color: #001f3f; /* Navy Blue */
     --secondary-color: #6c757d;
     --success-color: #198754;
-    --bg-light: #f8f9fa;
-    --text-color: #212529;
+    --bg-light: #0d1b2a;
+    --text-color: #ffffff;
     --font-family: 'Inter', sans-serif;
 }
 
-/* ==========================
-   Base Styling
-========================== */
 body {
     background-color: var(--bg-light);
     font-family: var(--font-family);
@@ -27,6 +20,12 @@ body {
     font-weight: bold;
     font-size: 1.6rem;
     letter-spacing: 1px;
+    color: #ffffff !important;
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
 }
 
 /* Container */
@@ -40,6 +39,9 @@ body {
     border-radius: 8px;
     padding: 12px 20px;
     margin-top: 10px;
+    background-color: #1e293b;
+    border-color: #334155;
+    color: white;
 }
 
 /* Buttons */
@@ -59,16 +61,15 @@ body {
     background-color: #157347;
 }
 
-/* ==========================
-   Form Styling
-========================== */
+/* Forms */
 form {
-    background-color: white;
+    background-color: #1e293b;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     margin: auto;
+    color: #ffffff;
 }
 
 form label {
@@ -81,12 +82,12 @@ form input,
 form select,
 form textarea {
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 1px solid #64748b;
     padding: 12px;
     margin-bottom: 15px;
     width: 100%;
-    background-color: white;
-    color: #212529;
+    background-color: #334155;
+    color: #ffffff;
 }
 
 form input:focus,
@@ -102,45 +103,12 @@ form button {
     padding: 12px;
 }
 
-/* ==========================
-   Footer
-========================== */
+/* Footer */
 footer {
-    background-color: #343a40;
+    background-color: #001f3f;
     color: white;
     padding: 15px 0;
     text-align: center;
     margin-top: 30px;
     border-top: 1px solid #6c757d;
-}
-
-/* ==========================
-   Dark Theme
-========================== */
-body.theme-dark {
-    background-color: #121212;
-    color: #64114a;
-}
-
-body.theme-dark form {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-}
-
-body.theme-dark input,
-body.theme-dark select,
-body.theme-dark textarea {
-    background-color: #2c2c2c;
-    border: 1px solid #444;
-    color: #f10fbc;
-}
-
-body.theme-dark .navbar,
-body.theme-dark footer {
-    background-color: #222;
-}
-
-body.theme-dark .alert {
-    background-color: #333;
-    border-color: #444;
 }
