@@ -1,5 +1,7 @@
 {% extends 'events/base.html' %}
 
+{% block title %}Register - Adventurers Camp Out{% endblock %}
+
 {% block content %}
 <h2 class="text-center mb-4">Naivasha Station Adventurers Camp Out 2025</h2>
 
@@ -15,12 +17,12 @@
 
         {{ form.as_p }}
 
-        <button type="submit" class="btn btn-success">Complete Registration</button>
+        <button type="submit" class="btn btn-success mt-3">Complete Registration</button>
     </form>
 </div>
 
 <script>
-    // Toggle "detail" field options based on category
+    // Dynamic options for the "detail" field
     const categoryField = document.querySelector('[name="category"]');
     const detailField = document.querySelector('[name="detail"]');
 
@@ -50,8 +52,9 @@
     };
 
     if (categoryField && detailField) {
-        updateDetailOptions();  // Set initial state
+        updateDetailOptions();  // Initial load
         categoryField.addEventListener('change', updateDetailOptions);
     }
 </script>
 {% endblock %}
+

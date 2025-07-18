@@ -3,9 +3,10 @@
 {% block title %}Registration Complete{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="alert alert-success shadow-sm rounded" role="alert">
-        <h4 class="alert-heading">Registration Successful!</h4>
+<div class="container mt-5 text-light">
+    <div class="p-4 bg-dark border border-success rounded shadow-sm">
+        <h3 class="mb-3 text-success">✅ Registration Successful!</h3>
+
         <p>Thank you, <strong>{{ attendee.name }}</strong>, for registering.</p>
 
         {% if attendee.category == 'adult' %}
@@ -14,10 +15,11 @@
             <p>You are registered as a <strong>Child</strong> in the <strong>{{ attendee.detail }}</strong> age group.</p>
         {% endif %}
 
-        <hr>
-        <a href="{% url 'event_list' %}" class="btn btn-outline-primary mt-3">Back to Events</a>
+        <hr class="border-light">
+        <a href="{% url 'event_list' %}" class="btn btn-outline-light mt-3">← Back to Events</a>
     </div>
 </div>
 {% endblock %}
+
 
 
