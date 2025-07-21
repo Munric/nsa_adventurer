@@ -22,12 +22,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-for-local-dev')
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+DEBUG = False
 
 import os
 
-ALLOWED_HOSTS = ['nsa-adventurer.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'mweresa22.pythonanywhere.com',
+    'nsa-adventurer.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
 
+               
 
 
 # Application definition
