@@ -153,6 +153,7 @@ AUTHENTICATION_BACKENDS = [
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'  # or 'optional' or 'none'
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+LOGIN_URL = '/admin/login/'
 
 SITE_ID = 1
 
